@@ -55,6 +55,11 @@ a{text-decoration:none;color:inherit}
     height:40px;
     object-fit:contain;
 }
+.mobile-logo{
+    width:36px;
+    height:36px;
+    object-fit:contain;
+}
 
 /* Desktop body */
 .desktop-page{max-width:1120px;margin:32px auto 60px;padding:0 8px;display:grid;grid-template-columns:minmax(0,2.1fr) minmax(290px,1fr);gap:30px}
