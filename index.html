@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#ffffff" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Stocks Explore" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <title>Stocks Explore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="desktop-header">
+    <div class="header-row">
+      <a class="brand" href="#" aria-label="Stocks Explore">
+        <span class="brand-logo"><i></i></span>
+      </a>
+      <nav class="primary-nav">
+        <a class="active" href="#">Stocks</a>
+        <a href="#">F&amp;O</a>
+        <a href="#">Mutual Funds</a>
+      </nav>
+      <label class="search">
+        <span>⌕</span>
+        <input placeholder="Search stocks..." />
+        <small>Ctrl+K</small>
+      </label>
+      <button class="bell" aria-label="Notifications">♧</button>
+      <button class="profile">S</button>
+    </div>
+
+    <div class="nav-row">
+      <nav class="secondary-nav">
+        <a class="active" href="#">Explore</a>
+        <a href="#">Holdings</a>
+        <a href="#">Positions</a>
+        <a href="#">Orders</a>
+        <a href="#">Watchlist</a>
+      </nav>
+      <div class="nav-actions">
+        <button>⚙ Terminal</button>
+        <button>915</button>
+      </div>
+    </div>
+
+    <div class="market-strip">
+      <div class="strip-inner">
+        <span><b>NIFTY</b> 24,206.90 <em>244.10 (1.02%)</em></span>
+        <span><b>SENSEX</b> 77,569.39 <em>827.57 (1.08%)</em></span>
+        <span><b>BANKNIFTY</b> 58,045.90 <em>793.45 (1.39%)</em></span>
+        <span><b>MIDCPNIFTY</b> 14,820.90 <em>166.10 (1.13%)</em></span>
+        <span><b>FINNIFTY</b> 26,831.05</span>
+        <button class="globe">◎</button>
+      </div>
+    </div>
+  </header>
+
+  <header class="mobile-header">
+    <div class="mobile-search">
+      <span class="brand-logo compact"><i></i></span>
+      <span class="search-glyph">⌕</span>
+      <input placeholder="Search stocks" />
+      <button class="mobile-profile">U</button>
+    </div>
+    <div class="mobile-tabs">
+      <button class="active">Explore</button>
+      <button>Dashboard</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="desktop-page">
+      <section class="desktop-left">
+        <section class="block">
+          <h1>Most traded stocks</h1>
+          <div class="traded-grid" id="tradedGrid"></div>
+          <button class="text-link">See more ›</button>
+        </section>
+
+        <section class="block movers">
+          <h1>Top movers today</h1>
+          <div class="filter-row">
+            <button class="active">Gainers</button>
+            <button>Losers</button>
+            <button>Volume shockers</button>
+            <span class="divider"></span>
+            <button>NIFTY 100⌄</button>
+          </div>
+
+          <div class="stock-table">
+            <div class="table-head">
+              <span>Company</span>
+              <span>Market price (1D)</span>
+              <span>Volume</span>
+            </div>
+            <div id="stockRows"></div>
+          </div>
+        </section>
+      </section>
+
+      <aside class="desktop-right">
+        <section class="block">
+          <h1>Your investments</h1>
+          <div class="investment-card">
+            <span class="muted">Current</span>
+            <h2>₹191</h2>
+            <div class="metric"><span>1D returns</span><strong>+₹3.28 (1.75%)</strong></div>
+            <div class="metric"><span>Total returns</span><strong>+₹77.09 (67.56%)</strong></div>
+            <div class="metric"><span>Invested</span><b>₹114</b></div>
+          </div>
+        </section>
+
+        <section class="block tools-block">
+          <h1>Products &amp; Tools</h1>
+          <div class="tools-card" id="toolsList"></div>
+        </section>
+      </aside>
+    </div>
+
+    <div class="mobile-page">
+      <section class="mobile-section">
+        <div class="mobile-title-row">
+          <h2>Market Indices</h2>
+          <button class="green-pill">SCREENER</button>
+        </div>
+        <div class="horizontal-scroll" id="indicesRow"></div>
+      </section>
+
+      <section class="mobile-section">
+        <div class="mobile-title-row">
+          <h2>Top Gainers <small>NIFTY100</small></h2>
+          <button class="plain-green">SEE MORE</button>
+        </div>
+        <div class="horizontal-scroll" id="gainersRow"></div>
+      </section>
+
+      <section class="mobile-section">
+        <div class="mobile-title-row">
+          <h2>Stocks in News</h2>
+          <button class="green-pill">NEWS</button>
+        </div>
+        <div class="horizontal-scroll" id="newsRow"></div>
+      </section>
+    </div>
+  </main>
+
+  <nav class="bottom-nav">
+    <a class="active" href="#"><span>↗</span><small>Stocks</small></a>
+    <a href="#"><span>◒</span><small>Mutual Funds</small></a>
+  </nav>
+
+  <div id="installBanner" class="install-banner" hidden>
+    <div>
+      <strong>Install this web app</strong>
+      <span>Add it to your home screen for an app-like experience.</span>
+    </div>
+    <button id="installBtn">Install</button>
+    <button id="dismissInstall" aria-label="Dismiss">×</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
