@@ -49,6 +49,13 @@ a{text-decoration:none;color:inherit}
 .strip-inner em{font-style:normal;color:var(--green);font-weight:600;margin-left:5px}
 .globe{border:1px solid var(--line);background:#fff;width:30px;height:30px;border-radius:8px;font-size:18px;color:#727989}
 
+
+.logo-img{
+    width:40px;
+    height:40px;
+    object-fit:contain;
+}
+
 /* Desktop body */
 .desktop-page{max-width:1120px;margin:32px auto 60px;padding:0 8px;display:grid;grid-template-columns:minmax(0,2.1fr) minmax(290px,1fr);gap:30px}
 .block h1{font-size:18px;margin:0 0 18px;font-weight:600}
