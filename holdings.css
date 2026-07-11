@@ -370,7 +370,7 @@ svg{display:block}
 .holdings-list{width:100%}
 
 .holding-row{
-  min-height:112px;
+  min-height:65px;
   display:grid;
   grid-template-columns:minmax(0,1.1fr) minmax(78px,.9fr) minmax(108px,1fr);
   align-items:center;
